@@ -1,0 +1,581 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Worklancers – AI Career Placement</title>
+    <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script defer src="{% static 'website/js/main.js' %}"></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="top-header">
+        <div class="logo-pill">
+            <!-- <span class="logo-text">Worklancers</span> -->
+            <span class="logo-text"><img src="{% static 'website/images/logos/Worklancers.png' %}" alt=""></span>
+        </div>
+    </header>
+    <!-- HERO -->
+    <section class="hero reveal" data-aos="fade-up">
+        <span class="badge">✨ AI Career Placement</span>
+        <h1 data-aos="fade-up" data-aos-delay="100" class="hero-title">
+            Let Worklancers AI <br>
+            <span class="word-slider">
+                <span class="word active">Get You Placed</span>
+                <span class="word">Apply to Jobs</span>
+                <span class="word">Coach for Interviews</span>
+                <span class="word">Write your CV</span>
+            </span>
+        </h1>
+
+        <div class="hero-video" data-aos="zoom-in" data-aos-delay="200">
+            <div class="video-left">
+                <video id="heroVideo" autoplay muted loop playsinline>
+                    <source src="{% static 'website/videos/overview.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <button class="unmute" id="muteToggle">
+                    Unmute
+                </button>
+            </div>
+
+        </div>
+
+
+        <div class="trust" data-aos="fade-up" data-aos-delay="300">
+            <span>⭐ 4.9 rating</span>
+            <span>👥 190k+ talent community</span>
+        </div>
+        <br>
+        <a href="#chat-section" class="primary-btn scroll-to-form">Apply to Interview</a>
+    </section>
+
+    <!-- ELITE COMPANIES -->
+    <section class="elite-companies-parent">
+        <section class="elite-companies " data-aos="fade-up">
+            <!-- TOP SCROLL -->
+            <div class="logo-marquee">
+                <div class="logo-track">
+                    <img src="{% static 'website/images/logos/perplexity.webp' %}" alt="Perplexity">
+                    <img src="{% static 'website/images/logos/amazon.jpg' %}" alt="Perplexity">
+                    <img src="{% static 'website/images/logos/deel.jpg' %}" alt="Deel">
+                    <img src="{% static 'website/images/logos/google.webp' %}" alt="Google">
+                    <img src="{% static 'website/images/logos/remote.webp' %}" alt="Remote">
+                    <img src="{% static 'website/images/logos/quip.png' %}" alt="Quip">
+                    <img src="{% static 'website/images/logos/microsoft.png' %}" alt="Microsoft">
+                    <img src="{% static 'website/images/logos/OpenAI.webp' %}" alt="Microsoft">
+                    <img src="{% static 'website/images/logos/accenture.png' %}" alt="Accenture">
+                    <img src="{% static 'website/images/logos/Zapier_logo.svg' %}" alt="Accenture">
+
+                    <!-- duplicate -->
+                    <img src="{% static 'website/images/logos/perplexity.webp' %}">
+                    <img src="{% static 'website/images/logos/deel.jpg' %}">
+                    <img src="{% static 'website/images/logos/google.webp' %}">
+                    <img src="{% static 'website/images/logos/remote.webp' %}">
+                    <img src="{% static 'website/images/logos/quip.png' %}">
+                    <img src="{% static 'website/images/logos/microsoft.png' %}">
+                    <img src="{% static 'website/images/logos/accenture.png' %}">
+                </div>
+            </div>
+
+            <h2 data-aos="fade-up" data-aos-delay="150">Apply to Elite Companies</h2>
+
+            <!-- BOTTOM SCROLL -->
+            <div class="logo-marquee">
+                <div class="logo-track slow">
+                    <img src="{% static 'website/images/logos/perplexity.webp' %}" alt="Perplexity">
+                    <img src="{% static 'website/images/logos/amazon.jpg' %}" alt="Perplexity">
+                    <img src="{% static 'website/images/logos/deel.jpg' %}" alt="Deel">
+                    <img src="{% static 'website/images/logos/google.webp' %}" alt="Google">
+                    <img src="{% static 'website/images/logos/remote.webp' %}" alt="Remote">
+                    <img src="{% static 'website/images/logos/quip.png' %}" alt="Quip">
+                    <img src="{% static 'website/images/logos/microsoft.png' %}" alt="Microsoft">
+                    <img src="{% static 'website/images/logos/accenture.png' %}" alt="Accenture">
+
+                    <!-- duplicate -->
+                    <img src="{% static 'website/images/logos/perplexity.webp' %}">
+                    <img src="{% static 'website/images/logos/deel.jpg' %}">
+                    <img src="{% static 'website/images/logos/google.webp' %}">
+                    <img src="{% static 'website/images/logos/remote.webp' %}">
+                    <img src="{% static 'website/images/logos/quip.png' %}">
+                    <img src="{% static 'website/images/logos/microsoft.png' %}">
+                    <img src="{% static 'website/images/logos/accenture.png' %}">
+                </div>
+            </div>
+
+        </section>
+
+    </section>
+    <!-- CHAT SECTION -->
+
+    <section id="chat-section" class="chat reveal" data-aos="fade-up">
+        <h2>Chat With Our Team: <span>Unlock Dream Career</span></h2>
+        <p>
+            Whether you're just starting out, or you're a seasoned career professional,
+            Worklancers will help you land your dream job in no time.
+        </p>
+
+        <div class="chat-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="{% static 'website/images/lifestyle1.webp' %}">
+            <div class="chat-content">
+                <h3>Interview For Top Companies with AI</h3>
+                <p>Deliver ATS-friendly resumes to recruiters, and get placed.</p>
+
+                <button class="cta-btn apply-now-btn">
+                    Apply Now
+                </button>
+
+                <small>257,225 people have filled this out</small>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FORM SECTION (hidden initially) -->
+    <section id="form-section" class="apply-form reveal hidden" data-aos="fade-up">
+        <div class="form-card" data-aos="zoom-in">
+            <!-- Back button -->
+            <button class="back-btn" id="backToChat">
+                ← Back
+            </button>
+
+            <h2>Where can we send your interview invitation?</h2>
+            <p class="form-subtext">Limited slots only.</p>
+
+            <form id="applyForm">
+                {% csrf_token %}
+                <input type="hidden" name="source" id="sourceField">
+
+                <div class="field">
+                    <input name="first_name" required />
+                    <label>First Name</label>
+                </div>
+
+                <div class="field">
+                    <input name="last_name" required />
+                    <label>Last Name</label>
+                </div>
+
+                <div class="field">
+                    <input name="email" type="email" required />
+                    <label>Email</label>
+                </div>
+
+                <div class="field">
+                    <input name="phone" required />
+                    <label>Phone</label>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span class="text">Submit</span>
+                    <span class="loader"></span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+
+
+    <!-- TESTIMONIALS -->
+    <!-- TESTIMONIALS -->
+    <section class="testimonials reveal" data-aos="fade-up">
+        <h2>Join 5000+ Global Placements</h2>
+        <p class="testimonials-sub">
+            Professionals worldwide trust Worklancers to accelerate their careers
+        </p>
+
+        <div class="testimonial-wrapper" data-aos="fade-up" data-aos-delay="200">
+            <div class="testimonial-track">
+                {% for t in testimonials %}
+                <div class="testimonial-card">
+                    <div class="rating">
+                        {% for i in "12345"|slice:":t.rating" %}★{% endfor %}
+                    </div>
+                    <p>{{ t.review }}</p>
+                    <div class="author">
+                        <strong class="author-name">{{ t.name }}</strong>
+                        <span class="author-role">· {{ t.role }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <!-- duplicate loop for infinite scroll -->
+                {% for t in testimonials %}
+                <div class="testimonial-card">
+                    <div class="rating">
+                        {% for i in "12345"|slice:":t.rating" %}★{% endfor %}
+                    </div>
+                    <p>{{ t.review }}</p>
+                    <div class="author">
+                        <strong>{{ t.name }}</strong>
+                        <span>{{ t.role }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Review button (top-right corner) -->
+        <div class="review-action">
+            <button id="openReviewForm" class="review-btn">
+                ✍ Write a Review
+            </button>
+        </div>
+
+        <!-- Review Form Wrapper (hidden initially) -->
+        <div id="reviewFormWrapper" class="review-form-wrapper hidden">
+
+            <div class="review-form-header">
+                <h3>Share your experience</h3>
+                <button id="closeReviewForm" class="close-review">✕</button>
+            </div>
+
+            <form id="reviewForm">
+                {% csrf_token %}
+
+                <input type="text" name="name" placeholder="Your name" required>
+
+                <input type="text" name="role" placeholder="Your role (optional)">
+
+                <div class="star-input" id="starInput">
+                    <span data-value="1">★</span>
+                    <span data-value="2">★</span>
+                    <span data-value="3">★</span>
+                    <span data-value="4">★</span>
+                    <span data-value="5">★</span>
+                </div>
+
+                <input type="hidden" name="rating" id="ratingInput" required>
+
+                <textarea name="review" placeholder="Write your review..." required></textarea>
+
+                <button type="submit" class="primary-btn full-width">
+                    Submit Review
+                </button>
+            </form>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- PROBLEM -->
+    <section class="problem-section" data-aos="fade-up">
+        <div class="problem-card" data-aos="zoom-in">
+            <h2>Tired of Sending 100+ Applications with Little Response?</h2>
+
+            <ul>
+                <li>⚡ You pour hours into writing cover letters and resumes, yet rarely hear back.</li>
+                <li>⚡ Manual job hunting is draining, and each new application feels like a shot in the dark.</li>
+                <li>⚡ Interview prep is confusing, and you’re not sure what skills employers want to see.</li>
+            </ul>
+
+            <p class="problem-footer">
+                Sound familiar? You’re not alone. Traditional job searching can be a frustrating,
+                time-consuming process.
+            </p>
+        </div>
+    </section>
+
+    <section class="dream-section" data-aos="fade-up">
+        <div class="dream-card">
+
+            <div class="dream-left" data-aos="fade-right">
+                <h2>Imagine Living Your Dream<br><span>Remote Life</span></h2>
+
+                <p>
+                    No more endless commutes or cramped offices. With Worklancers,
+                    you work from anywhere—whether it’s a sunny beach in Bali,
+                    a cozy café in Paris, or even your own backyard.
+                </p>
+
+                <p class="dream-muted">
+                    Transform your career and embrace a life of freedom, adventure,
+                    and flexible work. Your dream lifestyle is just one click away.
+                </p>
+            </div>
+
+            <div class="dream-right" data-aos="fade-left">
+                <img src="{% static  'website/images/remote1.webp' %}" alt="">
+                <img src="{% static  'website/images/remote2.webp' %}" alt="">
+                <img src="{% static  'website/images/remote3.webp' %}" alt="">
+                <img src="{% static  'website/images/remote4.webp' %}" alt="">
+            </div>
+
+            <div class="scroll-indicator">
+                ↓
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="accelerate-section">
+        <h2 class="section-title">Worklancers Accelerates Placement by 100X</h2>
+        <p class="section-subtitle">
+            We’ve built a powerful solution that applies to hundreds of jobs, each with an
+            AI-optimized resume tailored to the job description you’re applying to.
+        </p>
+
+        <!-- CARD 1 -->
+        <div class="accelerate-card" data-aos="fade-up">
+            <div class="card-text">
+                <h3>AI Optimize Each Resume</h3>
+                <ul>
+                    <li>Keyword optimize each resume you send via Auto Apply with AI</li>
+                    <li>Increase the chances of being seen by a recruiter by 15X</li>
+                    <li>Send auto-formatted resumes to companies</li>
+                    <li>Ditch complicated resume builders</li>
+                </ul>
+
+                <a href="#chat-section" class="cta-btn scroll-to-form">Place Me</a>
+            </div>
+
+            <div class="card-media">
+                <img src="{% static 'website/images/resume-preview.png' %}" alt="Resume Preview">
+            </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="accelerate-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-text">
+                <h3>Track Automated Applications</h3>
+                <ul>
+                    <li>Connect with your LinkedIn</li>
+                    <li>Apply to curated jobs automatically</li>
+                    <li>Track all job applications in one place</li>
+                    <li>Get custom interview training for each job</li>
+                    <li>Monitor applications in real-time</li>
+                </ul>
+
+                <a href="#chat-section" class="cta-btn scroll-to-form">Apply for Me</a>
+
+            </div>
+
+            <div class="card-media">
+                <img src="{% static 'website/images/app-tracking.png' %}" alt="Application Tracking">
+                <!-- <video src="{% static 'website/images/app-tracking.webp' %}"></video> -->
+                <!-- <iframe src="{% static 'website/images/app-tracking.png' %}" frameborder="0"></iframe> -->
+            </div>
+        </div>
+    </section>
+
+    <section class="interview-section" data-aos="fade-up">
+        <div class="interview-card" data-aos="zoom-in">
+            <div class="interview-text">
+                <h3>Never Take Round 1 Interviews Again</h3>
+                <ul>
+                    <li>Take Conversational AI Skill Tests</li>
+                    <li>Showcase your interviews on your profile</li>
+                    <li>Skip the line with recruiters by proving skills early</li>
+                    <li>Increase interview chances by 10x</li>
+                </ul>
+
+                <a href="#chat-section" class="cta-btn scroll-to-form">Train Me</a>
+
+            </div>
+
+            <div class="interview-media">
+                <img src="{% static 'website/images/interview-preview.webp' %}" alt="Interview Preview">
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-section" data-aos="fade-up">
+        <div class="feature-card" data-aos="fade-up">
+            <div class="feature-text">
+                <h3>Get a Certificate Employers Trust</h3>
+                <ul>
+                    <li>Verify your identity with a Government ID</li>
+                    <li>Get a Certificate to put on LinkedIn</li>
+                    <li>Build Trust with Employers</li>
+                    <li>Increase placement rate by 8x when you become a Certified Employee</li>
+                </ul>
+
+                <a href="#chat-section" class="primary-btn  scroll-to-form">Certify Me</a>
+
+            </div>
+
+            <div class="feature-image">
+                <img src="{%static 'website/images/certificate.webp' %}" alt="Certificate">
+            </div>
+
+        </div>
+    </section>
+
+    <section class="autopilot-section" data-aos="fade-up">
+        <h2>Placement on Auto Pilot</h2>
+        <p class="subtitle">
+            Your profile is a career toolkit. Share a link showcasing your skills and achievements.
+        </p>
+
+        <div class="steps-grid">
+
+            <div class="step" data-aos="fade-up">
+                <span>1</span>
+                <h4>Upload Your Resume</h4>
+                <p>Upload your existing resume, and we’ll automatically fill in your details.</p>
+            </div>
+
+            <div class="step" data-aos="fade-up">
+                <span>2</span>
+                <h4>Take Skill Test</h4>
+                <p>Complete a quick video test to showcase your skills to recruiters.</p>
+            </div>
+
+            <div class="step" data-aos="fade-up">
+                <span>3</span>
+                <h4>Connect Your LinkedIn</h4>
+                <p>Install our extension so we can apply for you.</p>
+            </div>
+
+            <div class="step" data-aos="fade-up">
+                <span>4</span>
+                <h4>Get Placed</h4>
+                <p>Interview with Dream Companies that are hiring remote.</p>
+            </div>
+
+        </div>
+
+        <a href="#chat-section" class="primary-btn center-btn scroll-to-form">Get Placed</a>
+
+    </section>
+
+    <section class="no-fee-section">
+        <div class="no-fee-card">
+            <h2>No Placement Fee – Your Placement is on Us</h2>
+
+            <p>
+                You pay only for resume writing, training, and AI matching services.
+                We never charge you for placements.
+            </p>
+
+            <ul>
+                <li>✔ Zero candidate placement fee</li>
+                <li>✔ Free interview placements</li>
+                <li>✔ Transparent pricing</li>
+                <li>✔ Companies invest in you — not you paying to get hired</li>
+            </ul>
+        </div>
+    </section>
+
+
+
+
+    <section class="faq-section" data-aos="fade-up">
+        <h2>Questions? <span>Answers.</span></h2>
+        <p class="faq-subtitle">
+            Quick answers to questions you may have. Can’t find what you’re looking for?
+            Check out our full documentation.
+        </p>
+
+        <div class="faq-container">
+
+            <div class="faq-item active">
+                <button class="faq-question">
+                    What if I already have a resume?
+                    <span class="arrow"></span>
+                </button>
+                <div class="faq-answer">
+                    Great—just upload it. We’ll parse your info and turn it into an ATS-optimized format.
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">
+                    How long does it take to get placed?
+                    <span class="arrow"></span>
+                </button>
+                <div class="faq-answer">
+                    Timelines vary, but many candidates start receiving interview calls within weeks.
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">
+                    How does job application automation work?
+                    <span class="arrow"></span>
+                </button>
+                <div class="faq-answer">
+                    Our AI applies to curated roles automatically using ATS-friendly resumes and tracking.
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">
+                    Is Worklancers secure?
+                    <span class="arrow"></span>
+                </button>
+                <div class="faq-answer">
+                    Yes. Your data is encrypted and never shared without your consent.
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up">
+                <button class="faq-question">
+                    Does Worklancers charge for placement?
+                    <span class="arrow"></span>
+                </button>
+                <div class="faq-answer">
+                    No placement fees. Companies pay us—not candidates.
+                </div>
+            </div>
+
+        </div>
+        <div class="final-cta">
+            <h2>Take quick action and get placed with global jobs today!</h2>
+            <a href="#chat-section" class="primary-btn scroll-to-form">Get a Job</a>
+        </div>
+    </section>
+
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 900,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 80
+        });
+    </script>
+    <script>
+        document.querySelectorAll('.scroll-to-form').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+
+                if (!target) return;
+
+                const yOffset = -80; // adjust if you have fixed header
+                const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+                window.scrollTo({
+                    top: y,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+    </script>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <span id="toastMessage"></span>
+    </div>
+
+
+</body>
+
+</html>

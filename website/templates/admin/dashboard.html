@@ -1,0 +1,40 @@
+{% extends "admin/base_site.html" %}
+{% block content %}
+
+<h1>📊 Worklancers Dashboard</h1>
+
+<canvas id="dailyChart" height="100"></canvas>
+<canvas id="premiumChart" height="100"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+const dailyLabels = [{% for d in daily_data %}"{{ d.day }}",{% endfor %}];
+const dailyCounts = [{% for d in daily_data %}{{ d.count }},{% endfor %}];
+
+new Chart(document.getElementById('dailyChart'), {
+  type: 'bar',
+  data: {
+    labels: dailyLabels,
+    datasets: [{
+      label: 'Applications (Last 7 Days)',
+      data: dailyCounts,
+    }]
+  }
+});
+
+const premiumLabels = [{% for p in premium_data %}"{{ p.premium_interest }}",{% endfor %}];
+const premiumCounts = [{% for p in premium_data %}{{ p.count }},{% endfor %}];
+
+new Chart(document.getElementById('premiumChart'), {
+  type: 'pie',
+  data: {
+    labels: premiumLabels,
+    datasets: [{
+      data: premiumCounts,
+    }]
+  }
+});
+</script>
+
+{% endblock %}
