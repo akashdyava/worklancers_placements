@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
+from dotenv import load_dotenv
+load_dotenv()
 
 from pathlib import Path
 
@@ -136,8 +138,14 @@ EMAIL_HOST_USER = "akash.mailservice@gmail.com"
 EMAIL_HOST_PASSWORD = "whgpqgbagwziznbq"
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-TWILIO_ACCOUNT_SID = "AC19a747449aff9c612777ce41e8d76dd1"
-TWILIO_AUTH_TOKEN = "151d93d0a8cf928c19d254ba0bd039f5"
+
+# TWILIO_ACCOUNT_SID = "AC19a747449aff9c612777ce41e8d76dd1"
+# TWILIO_AUTH_TOKEN = "151d93d0a8cf928c19d254ba0bd039f5"
 
 TWILIO_WHATSAPP_FROM = "whatsapp:+14155238886"
 ADMIN_WHATSAPP_TO = "whatsapp:+919701942436"  # your WhatsApp number
+
+import os
+
+TWILIO_ACCOUNT_SID = os.environ.get("AC19a747449aff9c612777ce41e8d76dd1")
+TWILIO_AUTH_TOKEN = os.environ.get("151d93d0a8cf928c19d254ba0bd039f5")
