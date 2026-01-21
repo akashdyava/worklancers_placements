@@ -23,10 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-2pl@z1kxz@2lhcvo%j8#=r7g%9ak-n1kmypzp)u2xrc%kah9un"
+# SECRET_KEY = "django-insecure-2pl@z1kxz@2lhcvo%j8#=r7g%9ak-n1kmypzp)u2xrc%kah9un"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = ['*']
 
@@ -136,14 +138,14 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "akash.mailservice@gmail.com"
-EMAIL_HOST_PASSWORD = "whgpqgbagwziznbq"
+EMAIL_HOST_USER = os.getenv("akash.mailservice@gmail.com")
+EMAIL_HOST_PASSWORD = os.getenv("whgpqgbagwziznbq")
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
-TWILIO_WHATSAPP_FROM = "whatsapp:+14155238886"
-ADMIN_WHATSAPP_TO = "whatsapp:+919701942436"  # your WhatsApp number
+TWILIO_WHATSAPP_FROM = os.getenv("whatsapp:+14155238886")
+ADMIN_WHATSAPP_TO = os.getenv("whatsapp:+919701942436" ) # your WhatsApp number
 
 
-TWILIO_ACCOUNT_SID = os.environ.get("AC19a747449aff9c612777ce41e8d76dd1")
-TWILIO_AUTH_TOKEN = os.environ.get("151d93d0a8cf928c19d254ba0bd039f5")
+TWILIO_ACCOUNT_SID = os.getenv("AC19a747449aff9c612777ce41e8d76dd1")
+TWILIO_AUTH_TOKEN = os.getenv("151d93d0a8cf928c19d254ba0bd039f5")
