@@ -8,24 +8,9 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import Application
 from django.core.mail import send_mail
-from .emails import send_user_confirmation
+from .emails import send_user_confirmation, send_admin_notification, send_testimonial_admin_mail, send_testimonial_user_mail
 from django.views.decorators.http import require_POST
 from .notifications import send_whatsapp  # optional
-
-send_mail(
-    subject="🚀 New Worklancers Application",
-    message=f"""
-New candidate applied:
-
-Name: {Application.first_name} {Application.last_name}
-Email: {Application.email}
-Phone: {Application.phone}
-""",
-    from_email=None,
-    recipient_list=["akash.mailservice@gmail.com"],
-)
-
-
 
 def submit_application(request):
     if request.method == "POST":
@@ -39,6 +24,9 @@ def submit_application(request):
 
         # ✅ SEND CONFIRMATION EMAIL TO USER
         send_user_confirmation(application)
+
+        # ✅ Send admin email
+        send_admin_notification(application)
 
         # ✅ OPTIONAL: ADMIN WHATSAPP / EMAIL
         send_whatsapp(application)
@@ -108,17 +96,19 @@ def dashboard(request):
 
 @require_POST
 def submit_testimonial(request):
-    testimonial = Testimonial.objects.create(
-        name=request.POST.get("name"),
-        role=request.POST.get("role", ""),
-        review=request.POST.get("review"),
-        rating=int(request.POST.get("rating")),
-        is_active=True  # later you can make this False for moderation
-    )
+    if request.method == "POST":
+        testimonial = Testimonial.objects.create(
+            name=request.POST.get("name"),
+            role=request.POST.get("role", ""),
+            review=request.POST.get("review"),
+            rating=int(request.POST.get("rating")),
+            is_active=True,
+        )
 
-    return JsonResponse({
-        "name": testimonial.name,
-        "role": testimonial.role,
-        "review": testimonial.review,
-        "rating": testimonial.rating
-    })
+        # ✅ Send emails
+        send_testimonial_admin_mail(testimonial)
+        send_testimonial_user_mail(testimonial)
+
+        return JsonResponse({"success": True})
+
+    return JsonResponse({"success": False}, status=400)

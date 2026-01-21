@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 from dotenv import load_dotenv
+import os
 load_dotenv()
 
 from pathlib import Path
@@ -27,7 +28,7 @@ SECRET_KEY = "django-insecure-2pl@z1kxz@2lhcvo%j8#=r7g%9ak-n1kmypzp)u2xrc%kah9un
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -118,7 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = "/static/"
-
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
@@ -139,13 +141,9 @@ EMAIL_HOST_PASSWORD = "whgpqgbagwziznbq"
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
-# TWILIO_ACCOUNT_SID = "AC19a747449aff9c612777ce41e8d76dd1"
-# TWILIO_AUTH_TOKEN = "151d93d0a8cf928c19d254ba0bd039f5"
-
 TWILIO_WHATSAPP_FROM = "whatsapp:+14155238886"
 ADMIN_WHATSAPP_TO = "whatsapp:+919701942436"  # your WhatsApp number
 
-import os
 
 TWILIO_ACCOUNT_SID = os.environ.get("AC19a747449aff9c612777ce41e8d76dd1")
 TWILIO_AUTH_TOKEN = os.environ.get("151d93d0a8cf928c19d254ba0bd039f5")
